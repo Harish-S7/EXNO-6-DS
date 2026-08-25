@@ -1,11 +1,12 @@
-# EXNO-6-DS-DATA VISUALIZATION USING SEABORN LIBRARY
-# Aim:
-To Perform Data Visualization using seaborn python library for the given datas.
+# EX:6 DATA VISUALIZATION USING SEABORN LIBRARY
 
-# EXPLANATION:
+## Aim:
+  To Perform Data Visualization using seaborn python library for the given datas.
+
+## EXPLANATION:
 Data visualization is the graphical representation of information and data. By using visual elements like charts, graphs, and maps, data visualization tools provide an accessible way to see and understand trends, outliers, and patterns in data.
 
-# Algorithm:
+## Algorithm:
 STEP 1:Include the necessary Library.
 
 STEP 2:Read the given Data.
@@ -16,27 +17,29 @@ STEP 4:Apply the various data visualization tools wherever necessary.
 
 STEP 5:Include Necessary parameters in each functions.
 
-# Coding and Output:
-```
+## Coding and Output:
+
+```py
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 df=pd.read_csv("titanic_dataset.csv")
 df.head()
 ```
-# OUTPUT:
-<img width="1216" height="202" alt="Screenshot 2025-11-05 155904" src="https://github.com/user-attachments/assets/d4f7d769-59e2-4c04-b1d7-c2c5841b669d" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/c111b446-500b-4b06-b284-572eb6a6d182"> 
 
-```
+
+### 1.Line Plot
+```py
 x=[1,2,3,4,5]
 y=[3,6,2,7,1]
 sns.lineplot(x=x,y=y)
 plt.title('Line Plot')
 ```
-# OUTPUT:
-<img width="1190" height="498" alt="Screenshot 2025-11-05 155920" src="https://github.com/user-attachments/assets/b786541b-5f44-4916-97ec-2483460c1ec2" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/2b7fed29-04ac-42de-b325-5ad68b3e36b2" width="300" height="300"> 
 
-```
+### 2.Multi Line Plot
+```py
 x=[1,2,3,4,5]
 y1=[3,5,2,6,1]
 y2=[1,6,4,3,8]
@@ -46,76 +49,75 @@ sns.lineplot(x=x,y=y2)
 sns.lineplot(x=x,y=y3)
 plt.title('Multi Line Plot')
 ```
-# OUTPUT:
-<img width="719" height="505" alt="Screenshot 2025-11-05 160952" src="https://github.com/user-attachments/assets/a405cad6-c999-41e8-b7ef-4689eaf33a3d" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/6b052b9d-b734-4079-a94d-f9c0f46039d6" width="300" height="300"> 
 
 
-```
+## TO VISUALIZE RELATIONSHIPS
+### 1.Bar Chart
+```py
 plt.figure(figsize=(8,5))
 sns.barplot(x='Embarked',y='Fare',data=df,palette='rainbow')
 plt.title("Fare Of Passenger By Embarked Town")
 ```
-# OUTPUT:
-<img width="1019" height="509" alt="Screenshot 2025-11-05 155938" src="https://github.com/user-attachments/assets/cdd7746a-1335-4147-be30-17a16792cec2" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/bcc83b1f-3e33-4793-ac34-686308202586" width="300" height="300"> 
 
-```
+### 2.Scatter Plot
+```py
 sns.scatterplot(x="Age", y="Fare", data=df)
 plt.title('Scatterplot of Age vs Fare')
 plt.show()
 ```
-# OUTPUT:
-<img width="1077" height="509" alt="Screenshot 2025-11-05 155944" src="https://github.com/user-attachments/assets/d228d9b9-71e7-4b6f-a40f-44d7ba7b71ce" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/f88c86d0-a615-4347-a4ab-9726858d2b85" width="300" height="300"> 
 
-```
+### 3.Bubble Chart
+```py
 sns.scatterplot(x="Age", y="Fare", size="Pclass", data=df, sizes=(30, 200))
 plt.title('Bubble Chart of Age vs Fare, Size by Passenger Class')
 plt.show()
 ```
-# OUTPUT:
-<img width="1017" height="500" alt="Screenshot 2025-11-05 155949" src="https://github.com/user-attachments/assets/7b2e8b1a-14a2-49de-9a1a-84f1bfb732c7" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/a981076a-4aec-4dd5-8793-5c37af9b3d8b" width="300" height="300"> 
 
-```
+## TO CAPTURE DISTRIBUTIONS
+### 1.Histogram
+```py
 sns.histplot(data=df,x="Pclass",hue="Survived",kde=True)
 ```
-# OUTPUT:
-<img width="1117" height="502" alt="Screenshot 2025-11-05 155956" src="https://github.com/user-attachments/assets/814962e5-c1fa-4907-9ab7-42883d4f60cd" />
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/8f3d6fba-04a6-414e-aeed-4136c6a3d2ee" width="300" height="300"> 
 
-```
+### 2.Box Plot
+```py
 sns.boxplot(x='Pclass',y='Age',data=df,palette='rainbow')
 plt.title("Age By Passenger Class")
 ```
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/0256c67c-dcc1-4099-8220-572400671d34" width="300" height="300"> 
 
-# OUTPUT:
-<img width="1041" height="521" alt="Screenshot 2025-11-05 160000" src="https://github.com/user-attachments/assets/5b2d120a-3992-4973-81bb-816110242955" />
-
-```
+### 3.Violin Plot
+```py
 sns.violinplot(x="Pclass", y="Fare", data=df)
 plt.title('Violin Plot of Fare by Passenger Class')
 plt.show()
 ```
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/822c14ba-e4a5-4705-8097-ec0b3b93c880" width="300" height="300"> 
 
-# OUTPUT:
-<img width="1009" height="511" alt="Screenshot 2025-11-05 160006" src="https://github.com/user-attachments/assets/9c7a5ee9-4d88-4223-93c8-a3e7e3556c43" />
-
-```
+### 4.Density Plot
+```py
 sns.kdeplot(data=df['Age'], shade=True)
 plt.title('Density Plot of Passenger Ages')
 plt.show()
 ```
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/701e4bca-dc51-4963-82d6-4f3b6541d905" width="300" height="300"> 
 
-# OUTPUT:
-<img width="1098" height="510" alt="Screenshot 2025-11-05 160011" src="https://github.com/user-attachments/assets/5ac6e673-3d5f-442f-9804-a1e854b27c24" />
-
-```
+### 5.Heatmap
+```py
 numeric_df = df.select_dtypes(include=['float64', 'int64'])
 corr_matrix = numeric_df.corr()
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Heatmap of Titanic Dataset')
 plt.show()
 ```
+<img src="https://github.com/PriyankaAnnadurai/EXNO-6-DS/assets/118351569/82f41352-a05b-482c-9328-5da56e384c85" width="300" height="300"> 
 
-# OUTPUT:
-<img width="1089" height="573" alt="Screenshot 2025-11-05 160019" src="https://github.com/user-attachments/assets/3a3a5fbd-ca1f-4b8a-9df9-d626132c9f2e" />
 
-# Result:
-Thus, the Data Visualization using seaborn python library for the given data is implemented successfully
+## Result:
+  Thus, the Data Visualization using seaborn python library for the given data is implemented successfully
+
